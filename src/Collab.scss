@@ -1,6 +1,5 @@
 #collab {
     background-color: #f3f3f3;
-    min-width: 100vh;
 
     textarea {
         width: 608px;
@@ -40,6 +39,25 @@
         background-color: #f3f2f1;
         width: 100%;
         box-shadow: 0px 1px 3px grey;
+        width:100%;
+    }
+
+    .outil > div{
+        display:flex;
+        height:100%;
+        width:200px;
+        margin-left: 10px;
+    }
+
+    .outil svg{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height:calc(100% - 10px);
+    }
+
+    .outil svg:hover{
+        opacity:0.7;
+        cursor:pointer;
     }
 
     .document {
@@ -47,5 +65,11 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .static-div{
+        position:sticky;
+        top:0;
     }
 }
