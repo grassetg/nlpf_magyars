@@ -1,0 +1,51 @@
+#collab {
+    background-color: #f3f3f3;
+    min-width: 100vh;
+
+    textarea {
+        width: 608px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff;
+        min-height: 1122px;
+        padding-left: 96px;
+        padding-top: 96px;
+        padding-right: 96px;
+        border: #bbbbbb solid 1px;    
+        resize: none;
+    }
+
+    textarea:focus{
+        border: #bbbbbb solid 1px;    
+    }
+
+    .bandeau {
+        height: 48px;
+        background-color: rgb(43, 87, 154);
+        position: relative;
+    }
+
+    .bandeau p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .outil {
+        height: 30px;
+        background-color: #f3f2f1;
+        width: 100%;
+        box-shadow: 0px 1px 3px grey;
+    }
+
+    .document {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+}
