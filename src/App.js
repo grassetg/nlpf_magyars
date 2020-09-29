@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Home from './Home';
 import Collab from './Collab';
 import {BrowserRouter,Route} from 'react-router-dom';
+import "./App.css";
 
 
 function App() {
