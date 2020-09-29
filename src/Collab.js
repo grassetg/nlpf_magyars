@@ -28,6 +28,7 @@ function Collab() {
                 <div className="static-div">
                     <div className="bandeau">
                         <p>Document - XZS24JDNX</p>
+                        <a href="/"><img className="home-icon" src={require("./media/home.svg") }/></a>
                     </div>
                     <div className="outil">
                         <div>
