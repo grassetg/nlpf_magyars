@@ -1,15 +1,42 @@
 #collab {
     background-color: #f3f3f3;
 
+    .doc-page{
+        border:1px solid #ababab;
+        min-height: 1122px;
+        width: 600px;
+        padding: 80px 100px;
+        margin-left: auto;
+        margin-right: auto;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        background-color:#fff;
+        text-align: left;
+    }
+
+    doc:focus{
+        outline: none;
+    }
+
+    doc{
+        min-height: calc(1122px - 160px);
+        width:100%;
+        text-align: left;
+    }
+
+    .document{
+        background-color: #f3f2f1;
+        width:100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
     textarea {
-        width: 608px;
+        width: 100%;
+        height:40vh;
         margin-left: auto;
         margin-right: auto;
         background-color: #fff;
-        min-height: 1122px;
-        padding-left: 96px;
-        padding-top: 96px;
-        padding-right: 96px;
         border: #bbbbbb solid 1px;    
         resize: none;
     }
@@ -58,14 +85,6 @@
     .outil svg:hover{
         opacity:0.7;
         cursor:pointer;
-    }
-
-    .document {
-        width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
     }
 
     .static-div{
