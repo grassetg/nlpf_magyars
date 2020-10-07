@@ -1,15 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
-import logo from './logo.svg';
 import io from 'socket.io-client';
-import ContentEditable from 'react-contenteditable'
-import sanitizeHtml from "sanitize-html";
 
 import './Collab.scss';
+import Docarea from './DocArea';
 
 var socket = io('http://localhost:3001');
 
 
 function Collab() {
+    
     return (
         <div id="collab">
             <div className="container">
@@ -30,61 +29,12 @@ function Collab() {
                 </div>
                 <div className="document">
                     <div className="doc-page">
-                        {/* <p contenteditable="true"><MyComponent /></p> */}
-                        <MyComponent />
-                    
+                        <Docarea />
                     </div>
-                    {/* <textarea onChange={(e) => { send(e.target.value) }} value={text} rows="30" cols="50" id="editor" placeholder="Type Your Text...">
-                    </textarea> */}
                 </div>
             </div>
         </div>
     );
 }
-
-function MyComponent() {
-    const [html, setHtml] = useState('<b>Hello <i>World</i></b>');
-    const [sani, setSani] = useState('');
-    
-    const sanitizeConf = {
-        allowedTags: ["b", "i", "em", "strong", "a", "p", "h1"],
-        allowedAttributes: { a: ["href"] }
-      };
-
-    function sanitize(){
-        setSani({ html: sanitizeHtml(html, sanitizeConf) });
-    }
-
-    useEffect(() => {
-        socket.on('message', (html) => {
-            setHtml(html);
-        })
-    }, []);
-
-    function send(evt) {
-        setHtml(evt.target.value);
-        socket.send(evt.target.value);
-    };
-    
-
-    return (
-    <div>
-        <ContentEditable
-        html={html}
-        disabled={false}
-        onChange={send}
-        tagName='doc'
-        onBlur={sanitize}
-        />
-        <hr style={{margin:'40px 0'}}/>
-        <textarea
-          className="editable"
-          value={html}
-          onChange={send}
-          onBlur={sanitize}
-        />
-    </div>
-    );
-};
 
 export default Collab;

@@ -5,6 +5,8 @@ import Collab from './Collab';
 import {BrowserRouter,Route} from 'react-router-dom';
 import "./App.css";
 
+import Selected from './Selected';
+
 
 function App() {
 
@@ -13,6 +15,7 @@ function App() {
       <BrowserRouter>
         <Route exact path="/" component={Home} />
         <Route path="/sheet" component={Collab} />
+        <Route path="/test" component={Selected} />
       </BrowserRouter> 
     </div>
   );
