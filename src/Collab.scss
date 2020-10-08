@@ -104,4 +104,25 @@
     .home-icon:hover{
         opacity:0.8;
     }
+
+    .btn-div{
+        height:100%;
+    }
+
+    .outil button{
+        height:100%;
+        width: 40px;
+        border:none;
+    }
+
+    .outil button:hover,
+    .outil button:focus{
+        background-color:#dbdbdb;
+        outline:none;
+    }
+
+    doc a{
+        cursor: pointer;
+    }
+    
 }
