@@ -1,0 +1,58 @@
+#popup-2{
+    pointer-events: auto;
+    margin-left: 0!important;
+    height: 100%;
+    background-color: #fff;
+    width: 250px;
+    padding: 0px 20px;
+}
+
+.modal > .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: 4px;
+    top: 12px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+  }
+
+.modal > .header {
+    padding:10px 0px;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+}
+
+.popup-overlay{
+    background: #000000a6;
+}
+
+.version-list{
+    margin-top: 30px;
+}
+
+.unit-version{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: 'Montserrat';
+    display: flex;
+}
+
+.unit-version:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.unit-version svg{
+    height: 20px;
+    margin-left: 10px;
+}

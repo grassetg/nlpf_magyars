@@ -6,9 +6,11 @@ import Docarea from './DocArea';
 import MyButton from './MyButton';
 import Size from './Size';
 import Color from './Color';
+import VersionPop from './Version';
+
+
 
 var socket = io('http://localhost:3001');
-
 
 function Collab() {
 
@@ -17,21 +19,18 @@ function Collab() {
             <div className="container">
                 <div className="static-div">
                     <div className="bandeau">
+                        <VersionPop />
                         <p>Document - XZS24JDNX</p>
                         <a href="/"><img className="home-icon" src={require("./media/home.svg")} /></a>
                     </div>
                     <div className="outil">
                         <div>
                             <Size />
-                            {/* <MyButton command="" arg="<big>" type="big" />
-                                <MyButton command="decreaseFontSize" type="small" /> */}
                             <MyButton command="bold" type="bold" />
                             <MyButton command="italic" type="italic" />
                             <MyButton command="underline" type="underline" />
                             <Color more="hiliteColor"/>
                             <Color more="foreColor"/>
-                            {/* <MyButton command="" type="highlighted" /> */}
-                            {/* <MyButton command="" type="font-color" /> */}
                             <div className="text-pos"></div>
                             <MyButton command="justifyLeft" type="align-left" />
                             <MyButton command="justifyCenter" type="align-center" />
