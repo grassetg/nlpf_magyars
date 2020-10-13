@@ -12,7 +12,7 @@ export default function MyComponent() {
     const [sani, setSani] = useState('');
     
     const sanitizeConf = {
-        allowedTags: ["b", "i", "em", "strong", "a", "p", "h1"],
+        allowedTags: ["b", "i", "em", "strong", "a", "p", "h1","u"],
         allowedAttributes: { a: ["href"] }
       };
 
