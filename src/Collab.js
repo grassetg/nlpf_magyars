@@ -4,12 +4,22 @@ import io from 'socket.io-client';
 import './Collab.scss';
 import Docarea from './DocArea';
 import EditButton from './MyButton';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import FormGroup from "react-bootstrap/FormGroup";
+import FormFile from "react-bootstrap/FormFile";
 
 var socket = io('http://localhost:3001');
 
 
 function Collab() {
-    
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
         <div id="collab">
             <div className="container">
@@ -34,6 +44,13 @@ function Collab() {
                             name="hyperlink"
                             type="4"
                             />
+                            <Form onSubmit={submit_img}>
+                                <FormGroup>
+                                    <FormFile id="img_path" label="Example file input" />
+                                    <Button className="btn btn-primary btn-large centerButton" type="submit">Send</Button>
+                                </FormGroup>
+                            </Form>
+                            <EditButton command="InsertImage" arg="http://placekitten.com/200/300" name="heading" type="5"/>
                         </div>
                     </div>
                 </div>
@@ -45,6 +62,13 @@ function Collab() {
             </div>
         </div>
     );
+}
+
+function submit_img(evt){
+    evt.preventDefault();
+
+     console.log("image added :" + String (evt.target[0].value));
+    document.execCommand("InsertImage", false, evt.target[0].value);
 }
 
 export default Collab;
