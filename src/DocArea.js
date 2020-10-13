@@ -12,7 +12,7 @@ export default function MyComponent() {
     const [sani, setSani] = useState('');
     
     const sanitizeConf = {
-        allowedTags: ["b", "i", "em", "strong", "a", "p", "h1","u"],
+        allowedTags: ["b", "i", "em", "strong", "a", "p", "h1","u","big","small"],
         allowedAttributes: { a: ["href"] }
       };
 
@@ -42,13 +42,13 @@ export default function MyComponent() {
         tagName='doc'
         onBlur={sanitize}
         />
-        <hr style={{margin:'40px 0'}}/>
+        {/* <hr style={{margin:'40px 0'}}/>
         <textarea
           className="editable"
           value={html}
           onChange={send}
           onBlur={sanitize}
-        />
+        /> */}
     </div>
     );
 };

@@ -21,8 +21,65 @@
     }
 }
 
+
 #popup-root{
-    .btn-list{
+    .btn-list,.color-list{
         display:grid;
     }
+
+    .color-list{
+        grid-template-columns:20% 20% 20% 20% 20%;
+        grid-row-gap: 1.2ch;
+        margin-right: -1.5ch;
+    }
+
+    .color-list > button, .no-color{
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        cursor: pointer;
+        border: none;
+    } 
+
+    .color-div{
+        background-color:#fff;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
+        outline: transparent;
+        border: none;
+        padding:5px 15px;
+    }
+
+    .color-div > p{
+        margin:10px 0px;
+        margin-bottom: 20px;
+        color:#000;
+        font-weight: 600;
+    }
+
+    
+
+    .color-list .btn-div, .color-list .btn-div > div{
+        height:100%;
+        width:100%;
+    }
+
+    .color-last{
+        margin:0!important;
+        display: flex;
+        padding-top: 5px;
+        font-family: 'Montserrat';
+    }
+
+    .color-last p{
+        margin:0;
+        padding-left: 10px;
+    }
+
+    hr{
+        background-color: #444;
+        border: #444.5px solid;
+        margin-bottom: 10px;
+    }
 }
+

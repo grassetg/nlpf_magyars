@@ -5,6 +5,7 @@ import './Collab.scss';
 import Docarea from './DocArea';
 import MyButton from './MyButton';
 import Size from './Size';
+import Color from './Color';
 
 var socket = io('http://localhost:3001');
 
@@ -21,28 +22,30 @@ function Collab() {
                     </div>
                     <div className="outil">
                         <div>
-                                <Size />
-                                <MyButton command="increaseFontSize" type="big" />
-                                <MyButton command="decreaseFontSize" type="small" />
-                                <MyButton command="bold" type="bold" />
-                                <MyButton command="italic" type="italic" />
-                                <MyButton command="underline" type="underline" />
-                                <MyButton command="" type="highlighted" />
-                                <MyButton command="" type="font-color" />
-                                <div className="text-pos"></div>
-                                <MyButton command="justifyLeft" type="align-left" />
-                                <MyButton command="justifyCenter" type="align-center" />
-                                <MyButton command="justifyRight" type="align-right" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="document">
-                        <div className="doc-page">
-                            <Docarea />
+                            <Size />
+                            {/* <MyButton command="" arg="<big>" type="big" />
+                                <MyButton command="decreaseFontSize" type="small" /> */}
+                            <MyButton command="bold" type="bold" />
+                            <MyButton command="italic" type="italic" />
+                            <MyButton command="underline" type="underline" />
+                            <Color more="hilitedColor"/>
+                            <Color more="foreColor"/>
+                            {/* <MyButton command="" type="highlighted" /> */}
+                            {/* <MyButton command="" type="font-color" /> */}
+                            <div className="text-pos"></div>
+                            <MyButton command="justifyLeft" type="align-left" />
+                            <MyButton command="justifyCenter" type="align-center" />
+                            <MyButton command="justifyRight" type="align-right" />
                         </div>
                     </div>
                 </div>
+                <div className="document">
+                    <div className="doc-page">
+                        <Docarea />
+                    </div>
+                </div>
             </div>
+        </div>
     );
 }
 
