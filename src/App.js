@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Route exact path="/" component={Home} />
-        <Route path="/sheet" component={Collab} />
+        <Route path="/sheet/:pid/v/:vid" component={Collab} />
       </BrowserRouter> 
     </div>
   );

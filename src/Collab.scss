@@ -175,5 +175,18 @@
         top: 50%;
         transform: translate(0, -50%);
     }
+
+    .revert-btn{
+        position: absolute;
+        left: calc(50% + 114px);
+        top: 51%;
+        transform: translate(0px, -50%);
+        font-family: 'Montserrat';
+        font-weight: 600;
+        background-color: #ffd2d2;
+        border: solid black 2px;
+        padding: 7px 12px;
+        cursor: pointer;
+    }
 }
 

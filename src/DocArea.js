@@ -1,23 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react';
 import io from 'socket.io-client';
 import ContentEditable from 'react-contenteditable'
-import sanitizeHtml from "sanitize-html";
 
 import './Collab.scss';
 
 var socket = io('http://localhost:3001');
 
-export default function MyComponent() {
-    const [html, setHtml] = useState('<b>Hello <i>World</i></b>');
-    const [sani, setSani] = useState('');
-    
-    const sanitizeConf = {
-        allowedTags: ["b", "i", "em", "strong", "a", "p", "h1","u","big","small"],
-        allowedAttributes: { a: ["href"] }
-      };
+export default function MyComponent(props) {
 
-    function sanitize(){
-        setSani({ html: sanitizeHtml(html, sanitizeConf) });
+    //  GET THE TEXT FROM THE DATABASE WITH PID AND VID => set html with it
+    const [html, setHtml] = useState('This is a new sheet'); // TO MODIFY
+    var editable = true;
+    if (props.vid == 1){
+        editable = false;
     }
 
     useEffect(() => {
@@ -37,18 +32,10 @@ export default function MyComponent() {
         <ContentEditable
         id="edit-doc"
         html={html}
-        disabled={false}
+        disabled={editable}
         onChange={send}
         tagName='doc'
-        onBlur={sanitize}
         />
-        {/* <hr style={{margin:'40px 0'}}/>
-        <textarea
-          className="editable"
-          value={html}
-          onChange={send}
-          onBlur={sanitize}
-        /> */}
     </div>
     );
 };
