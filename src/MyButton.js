@@ -20,7 +20,7 @@ export default function EditButton(props) {
             {props.type == 'align-right' && <div className="btn-div"><svg height="100%" width="100%" viewBox="0,0,2048,2048" focusable="false"><path type="path" class="OfficeIconColors_HighContrast" d="M 102 205 v -103 h 1844 v 103 m -1434 307 h 1434 v 102 h -1434 m 0 717 h 1434 v 103 h -1434 m -410 -512 h 1844 v 102 h -1844 m 0 717 h 1844 v 102 h -1844 z"></path><path type="path" class="OfficeIconColors_m22" d="M 102 205 v -103 h 1844 v 103 m -1434 307 h 1434 v 102 h -1434 m 0 717 h 1434 v 103 h -1434 m -410 -512 h 1844 v 102 h -1844 m 0 717 h 1844 v 102 h -1844 z"></path></svg></div>}
             {props.type == 'align-center' && <div className="btn-div"><svg height="100%" width="100%" viewBox="0,0,2048,2048" focusable="false"><path type="path" class="OfficeIconColors_HighContrast" d="M 102 102 h 1844 v 103 h -1844 m 0 1536 h 1844 v 102 h -1844 m 205 -1331 h 1434 v 102 h -1434 m -205 308 h 1844 v 102 h -1844 m 205 307 h 1434 v 103 h -1434 z"></path><path type="path" class="OfficeIconColors_m22" d="M 102 102 h 1844 v 103 h -1844 m 0 1536 h 1844 v 102 h -1844 m 205 -1331 h 1434 v 102 h -1434 m -205 308 h 1844 v 102 h -1844 m 205 307 h 1434 v 103 h -1434 z"></path></svg></div>}
             {props.type == 'size' && <div className="btn-div">{props.arg}</div>}
-            {props.type == 'hiliteColor' && <div className="btn-div"><div style={{backgroundColor:props.arg}}></div></div>} 
+            {(props.type == 'hiliteColor' || props.type == 'foreColor') && <div className="btn-div"><div style={{backgroundColor:props.arg}}></div></div>} 
         
         </button>
     );

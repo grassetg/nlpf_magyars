@@ -28,7 +28,7 @@ function Collab() {
                             <MyButton command="bold" type="bold" />
                             <MyButton command="italic" type="italic" />
                             <MyButton command="underline" type="underline" />
-                            <Color more="hilitedColor"/>
+                            <Color more="hiliteColor"/>
                             <Color more="foreColor"/>
                             {/* <MyButton command="" type="highlighted" /> */}
                             {/* <MyButton command="" type="font-color" /> */}
