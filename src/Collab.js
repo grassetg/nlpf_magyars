@@ -7,12 +7,13 @@ import MyButton from './MyButton';
 import Size from './Size';
 import Color from './Color';
 import VersionPop from './Version';
-
+import crypto from 'crypto'
 
 
 var socket = io('http://localhost:3001');
 
 function Collab(props) {
+
 
     return (
         <div id="collab">
