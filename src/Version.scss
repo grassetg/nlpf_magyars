@@ -40,6 +40,20 @@
     margin-top: 30px;
 }
 
+.version-list ul {
+    display: grid;
+    grid-row-gap: 20px;
+}
+
+.version-list ul button {
+    padding: 0px 12px;
+    height: 40px;
+    cursor: pointer;
+}
+.version-list ul button:hover{
+    opacity: 0.7;
+}
+
 .unit-version{
     padding-top: 30px;
     padding-bottom: 30px;
