@@ -9,14 +9,7 @@ var socket = io('http://localhost:3001');
 
 export default function MyComponent(props) {
 
-    async function getdata() {
-        let content = await axios.get('http://localhost:3002/version?token=' + props.pid + '&version=' + props.vid);
 
-        if (content !== "")
-            setHtml(content);
-        else
-            setHtml('this is a new sheet.')
-    }
 
     //  GET THE TEXT FROM THE DATABASE WITH PID AND VID => set html with it
     const [html, setHtml] = useState(""); // TO MODIFY
@@ -33,7 +26,7 @@ export default function MyComponent(props) {
 
     useEffect(() => {
         socket.on('message', (html) => {
-            getdata();
+            setHtml(html);
         })
     }, []);
 

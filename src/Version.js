@@ -10,6 +10,23 @@ import {Link, useHistory} from 'react-router-dom';
 
 export default function VersionPop(props) {
 
+    async function getdata() {
+        var id
+        if (props.vid === undefined)
+        {
+            id = 1;
+        }
+        else
+            id = props.vid;
+        let content = await axios.get('http://localhost:3002/version?token=' + props.pid + '&version=' + id);
+
+        console.log(content)
+        if (content.data !== "")
+
+            document.getElementById("edit-doc").innerHTML = content.data;
+        else
+            document.getElementById("edit-doc").innerHTML = 'this is a new sheet.'
+    }
 
     function setVersions() {
 
@@ -27,6 +44,10 @@ export default function VersionPop(props) {
         })
     }
 
+    useEffect(() => {
+        getdata();
+    }, []);
+
     function newVersionButtons(vid, pid) {
         return (
             <button onClick={handleClick(vid, pid)}>
@@ -36,6 +57,7 @@ export default function VersionPop(props) {
     }
 
     function handleClick(vid, pid) {
+        getdata()
         return () => history.push("/sheet/" + pid + "/v/" + vid);
     }
 
