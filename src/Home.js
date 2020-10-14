@@ -26,7 +26,7 @@ export default function Home(){
 
     }
 
-    var id = crypto.randomBytes(20).toString('hex');
+    var id = crypto.randomBytes(10).toString('hex');
     var str = "/sheet/" + id + "/v/1";
 
     return(
