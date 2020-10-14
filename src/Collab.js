@@ -7,12 +7,18 @@ import MyButton from './MyButton';
 import Size from './Size';
 import Color from './Color';
 import VersionPop from './Version';
+import axios from "axios";
 
 
 
 var socket = io('http://localhost:3001');
 
 function Collab(props) {
+
+    function save() {
+        let html = document.getElementById("edit-doc").innerHTML
+        axios.post("http://localhost:3002/save?token=" + props.pid + "&content="+ html)
+    }
 
     return (
         <div id="collab">
@@ -27,6 +33,7 @@ function Collab(props) {
                         => (FRONT) history.push the last version */}
                         {props.match.params.vid != 1 && <button className="revert-btn">Revert version</button>}
                         <a href="/"><img className="home-icon" src={require("./media/home.svg")} /></a>
+                        <button className="revert-btn-2" onClickCapture={save}>Sauvegarder</button>
                     </div>
                     <div className="outil">
                         <div>

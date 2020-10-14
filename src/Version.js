@@ -13,10 +13,9 @@ export default function VersionPop(props) {
 
     function setVersions() {
 
-        axios.get("http://localhost:3002/versions?token=" + "RZERZE").then((response) => {
+        axios.get("http://localhost:3002/versions?token=" + props.pid).then((response) => {
 
             const versions = response.data.versions;
-            let newVersionList = "";
             const listVersionButton = versions.map((version) =>
                 <button onClick={handleClick(version.versionNumber, props.pid)}>Version {version.versionNumber}</button>);
 

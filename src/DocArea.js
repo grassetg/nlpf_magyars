@@ -3,6 +3,7 @@ import io from 'socket.io-client';
 import ContentEditable from 'react-contenteditable'
 
 import './Collab.scss';
+import axios from "axios";
 
 var socket = io('http://localhost:3001');
 
@@ -15,11 +16,18 @@ export default function MyComponent(props) {
         editable = false;
     }
 
+    window.setInterval(() => {
+        console.log("html = " + html);
+
+    }, 10000);
+
+
     useEffect(() => {
         socket.on('message', (html) => {
             setHtml(html);
         })
     }, []);
+
 
     function send(evt) {
         setHtml(evt.target.value);
