@@ -1,4 +1,5 @@
 import React, {useState } from 'react';
+import axios from 'axios';
 
 import './Home.scss'
 import { useHistory } from 'react-router-dom';
@@ -12,10 +13,19 @@ export default function Home(){
         setToken(evt.target.value);
     }
 
+    async function getvalidtoken(token) {
+        let data = await axios.get('http://localhost:3002/isvalidtoken?token=' + token);
+        console.log(data);
+    }
+
     function handleClick(){
         console.log('TOKEN =>>>>>>>>>>>>>>>>>>>>>>> ' + token);
         // CHECK IF THIS TOKEN EXIST
-        return () => history.push("/sheet/" + token + "/v/" + '1'); 
+        return () => {
+            getvalidtoken(token)
+            console.log("test")
+            history.push("/sheet/" + token + "/v/" + '1');
+        }
     }
 
     return(
