@@ -9,10 +9,19 @@ var socket = io('http://localhost:3001');
 
 export default function MyComponent(props) {
 
+    async function getdata() {
+        let content = await axios.get('http://localhost:3002/version?token=' + props.pid + '&version=' + props.vid);
+
+        if (content !== "")
+            setHtml(content);
+        else
+            setHtml('this is a new sheet.')
+    }
+
     //  GET THE TEXT FROM THE DATABASE WITH PID AND VID => set html with it
-    const [html, setHtml] = useState('This is a new sheet'); // TO MODIFY
+    const [html, setHtml] = useState(""); // TO MODIFY
     var editable = true;
-    if (props.vid == 1){
+    if (props.vid == 1) {
         editable = false;
     }
 
@@ -24,7 +33,7 @@ export default function MyComponent(props) {
 
     useEffect(() => {
         socket.on('message', (html) => {
-            setHtml(html);
+            getdata();
         })
     }, []);
 
@@ -33,17 +42,17 @@ export default function MyComponent(props) {
         setHtml(evt.target.value);
         socket.send(evt.target.value);
     };
-    
+
 
     return (
-    <div>
-        <ContentEditable
-        id="edit-doc"
-        html={html}
-        disabled={editable}
-        onChange={send}
-        tagName='doc'
-        />
-    </div>
+        <div>
+            <ContentEditable
+                id="edit-doc"
+                html={html}
+                disabled={editable}
+                onChange={send}
+                tagName='doc'
+            />
+        </div>
     );
 };

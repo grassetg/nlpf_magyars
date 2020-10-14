@@ -10,7 +10,6 @@ import VersionPop from './Version';
 import axios from "axios";
 
 
-
 var socket = io('http://localhost:3001');
 
 function Collab(props) {
